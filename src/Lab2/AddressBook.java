@@ -4,16 +4,24 @@ import java.util.LinkedList;
 
 public class AddressBook {
 	private LinkedList <BuddyInfo> info;
-	public void addBuddy(String a){
-		BuddyInfo b=new BuddyInfo();
-		b.setName(a);
-		info.add(b);
-	}
-	public void removeBuddy(String a) {
-		BuddyInfo b =new BuddyInfo();
-		b.setName(a);
-		if(info.contains(b)) {
-			info.remove(b);
+	public void addBuddy(BuddyInfo a){
+		if(a!=null) {
+			info.add(a);
 		}
 	}
+	public void removeBuddy(int a) {
+		if(a>=0&&a<info.size()) {
+			info.remove(a);
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println("Address Book");
+		BuddyInfo b = new BuddyInfo();
+		b.setName("aaa");
+		AddressBook a = new AddressBook();
+		a.addBuddy(b);
+		a.removeBuddy(0);
+		a.addBuddy(b);
+	}
 }
+
