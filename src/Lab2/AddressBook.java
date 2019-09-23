@@ -4,6 +4,9 @@ import java.util.LinkedList;
 
 public class AddressBook {
 	private LinkedList <BuddyInfo> info;
+	public AddressBook() {
+		info = new LinkedList<>();
+	}
 	public void addBuddy(BuddyInfo a){
 		if(a!=null) {
 			info.add(a);
@@ -22,6 +25,7 @@ public class AddressBook {
 		a.addBuddy(b);
 		a.removeBuddy(0);
 		a.addBuddy(b);
+		a.removeBuddy(0);
 	}
 }
 
